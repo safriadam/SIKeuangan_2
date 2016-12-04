@@ -10,10 +10,10 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700"> -->
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <!-- Bootstrap CSS -->    
@@ -211,35 +211,86 @@
                 }
 </script>
 
-<script type="text/javascript" > // javascript untuk memberi peringatan jika realisasi lebih besar dari anggaran
+ <script type="text/javascript" > // javascript untuk memberi peringatan jika realisasi lebih besar dari anggaran
 
-            $(document).ready(function() {
+//             $(document).ready(function() {
             
-            banding();
-            $("#ang_bibit, #ang_nutrisi, #ang_bahan_lain,#bibit, #nutrisi, #bahan_lain").on("keyup", function() {
-                banding();
-            });
-        });
+//             banding();
+//             $("#ang_bibit, #ang_nutrisi, #ang_bahan_lain,#bibit, #nutrisi, #bahan_lain").on("change", function() {
+//                 banding();
+//             });
+//         });
 
-        function banding() {
-                    var num1 = document.getElementById('ang_bibit').value;
-                    var num2 = document.getElementById('ang_nutrisi').value;
-                    var num3 = document.getElementById('ang_bahan_lain').value;
-                    var num4 = document.getElementById('bibit').value;
-                    var num5 = document.getElementById('nutrisi').value;
-                    var num6 = document.getElementById('bahan_lain').value;
+//         function banding() {
+//                     var num1 = document.getElementById('ang_bibit').value;
+//                     var num2 = document.getElementById('ang_nutrisi').value;
+//                     var num3 = document.getElementById('ang_bahan_lain').value;
+//                     var num4 = document.getElementById('bibit').value;
+//                     var num5 = document.getElementById('nutrisi').value;
+//                     var num6 = document.getElementById('bahan_lain').value;
 
-                    // num1 = 70;
-                    // num4 = 80;
-                    //var result = parseInt(num1) + parseInt(num2) + parseInt(num3);
+//                     // num1 = 70;
+//                     // num4 = 80;
+//                     //var result = parseInt(num1) + parseInt(num2) + parseInt(num3);
 
-                    if ( num4 > num1 )
-                    {
-                        alert("tesss");
-                        document.getElementById('bibit').value = '';
-                    }
+//                     if ( num4 > num1 )
+//                     {
+
+                        
+//                         alert("Maaf, Realisasi tidak boleh lebih dari anggaran");
+//                         document.getElementById('bibit').value = '';
+//                     }
+
+//                     else if ( num5 > num2 )
+//                     {
+//                         alert("Maaf, Realisasi tidak boleh lebih dari anggaran");
+//                         document.getElementById('nutrisi').value = '';
+//                     }
+
+//                     else if ( num6 > num3 )
+//                     {
+//                         alert("Maaf, Realisasi tidak boleh lebih dari anggaran");
+//                         document.getElementById('bahan_lain').value = '';
+//                     }
                     
-                }
+//                 }
+// </script>
+
+<script type="text/javascript">
+    
+    
+
+    $("#bibit, #nutrisi, #bahan_lain").keyup(function(){
+
+        var bibit = $("#bibit").val();
+        var ang_bibit = $("#ang_bibit").val();
+        var nutrisi = $("#nutrisi").val();
+        var ang_nutrisi = $("#ang_nutrisi").val(); 
+        var bahan_lain = $("#bahan_lain").val();
+        var ang_bahan_lain = $("#ang_bahan_lain").val();
+
+        if ( parseInt(bibit) > parseInt(ang_bibit) )
+            {
+                alert("Maaf, Realisasi tidak boleh lebih dari anggaran");
+                $("#bibit").val("");
+            }
+        else if (parseInt(nutrisi) > parseInt(ang_nutrisi))
+            {
+                alert("Maaf, Realisasi tidak boleh lebih dari anggaran");
+                $("#nutrisi").val("");
+            }
+        else if (parseInt(bahan_lain) > parseInt(ang_bahan_lain))
+            {
+                alert("Maaf, Realisasi tidak boleh lebih dari anggaran");
+                $("#bahan_lain").val("");
+            }
+
+        else{
+        
+            }
+
+    });
+
 </script>
 
 </body>

@@ -52,12 +52,7 @@ class PengeluaranController extends Controller
     public function update($id, createPengeluaran $request)
     {
         $data = $request->all();
-        $bibit  = $request['real_bibit'];
-        $ang_bibit = $request['ang_bibit'];
-
         $pengeluaran = pengeluaran::find($id);
-
-        die;
         $pengeluaran->update($data);
         return redirect('pengeluaran');
     }

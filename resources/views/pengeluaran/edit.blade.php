@@ -13,7 +13,7 @@
 {!! Form::model($pengeluaran,array('url'=>'pengeluaran/'.$pengeluaran->id,'method'=>'patch')) !!}
 <table class="table table-bordered">
 
-	<tr><td>Realiasasi Masa Tanam: </td>
+	<tr><td>Realisasi Masa Tanam: </td>
 		<td>
 			{{ $pengeluaran->masa_tanam->format('F') }} - {{ $pengeluaran->masa_tanam->modify('+2 month')->format('F') }}
 		</td>

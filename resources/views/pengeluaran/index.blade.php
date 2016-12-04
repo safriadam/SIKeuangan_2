@@ -46,10 +46,6 @@
 <div class="container"> 	
 	<div class="col-sm-3">
 		<hr>
-			<!-- <div class="btn-group">
-				{!! link_to('realisasi/create','Tambah Realisasi',['class'=>'btn btn-danger btn-md btn-space']) !!}
-			</div>
-		<hr> -->
 	</div>
 
 </div>
